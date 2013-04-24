@@ -29,7 +29,7 @@ public class BarcodeScanner extends DroidGap
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        super.loadUrl("file:///android_asset/www/login.html");
+        super.loadUrl("file:///android_asset/www/index.html");
     }
 }
 
