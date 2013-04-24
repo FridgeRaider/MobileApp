@@ -23,7 +23,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=0, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/master.css" />
-        <title>Login</title>
+        <title>Register</title>
         <script src="https://apis.google.com/js/client.js?onload=init"></script>
     </head>
     <!--<body id="stage" class="theme">
@@ -72,7 +72,7 @@
         var ROOT = "https://hungrynorse.appspot.com/_ah/api";
         gapi.client.load('hungrynorse', 'v1', function() {
             console.log("About to Send Data");
-			console.log(data.displayName);
+			
             gapi.client.hungrynorse.users.register({"email":username.value, "password":password.value, "displayName":displayName.value}).execute(response);
             }, ROOT);
         
@@ -89,9 +89,11 @@
 		<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
         <script type="text/javascript">
             app.initialize();
+            document.addEventListener("deviceready", formcenter, false); //for phonegap
+			$(document).ready(formcenter); //for desktop
         </script>
 		
-		<!-- Makes sure login field is centered -->
+		<!-- Makes sure register field is centered -->
 		<script type="text/javascript">
 			document.addEventListener("deviceready", onDeviceReady, false);
 			function onDeviceReady() {
