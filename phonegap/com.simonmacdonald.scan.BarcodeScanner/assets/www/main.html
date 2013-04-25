@@ -32,6 +32,8 @@
 			<div class="top-row">
 				<input id="ingredient-entry" type="text" name="ingredients" placeholder="Enter Ingredients...">
 				<input id="submit-button" type="submit" class="btn small" value="Enter">
+			</div>
+			<div class="main-buttons">
 				<a ontouchend="app.scan()" class="btn small">Scan</a>
 				<a ontouchend="app.encode()" class="btn tiny">Encode</a>
 			</div>
@@ -66,8 +68,10 @@
 	<script type="text/javascript" src="barcodescanner.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
 	<script src="js/responsive-tables.js"></script>
 	<script type="text/javascript">
 		app.initialize();
+		checkLogin()
 	</script>
 </html>

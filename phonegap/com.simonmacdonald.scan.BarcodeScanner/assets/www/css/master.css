@@ -156,6 +156,11 @@
    width:100%;
   }
   
+  .main-buttons{
+	width: 100%;
+	height: 50px;
+  }
+  
   /* Login Form */
   div#formcenter{
 	vertical-align: middle;
@@ -213,4 +218,11 @@
   }
   .pinned{
 	background: #444 !important;
+  }
+
+  /*Responsive Content*/
+  @media (min-width:768px){
+	.main-buttons{
+		display:none;
+	}
   }
