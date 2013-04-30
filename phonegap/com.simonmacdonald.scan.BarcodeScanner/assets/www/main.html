@@ -24,50 +24,42 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=medium-dpi" />
         <link rel="stylesheet" type="text/css" href="css/master.css" />
 		<link rel="stylesheet" href="css/responsive-tables.css">
+		<link rel="icon" type="image/jpg" href="img/Viking_Refrigerator.jpg" />
         <title>Welcome to FridgeRaider!</title>
     </head>
     		
     <body id="stage" class="theme">
         <div class="app">
 			<div class="top-row">
-				<input id="ingredient-entry" type="text" name="ingredients" placeholder="Enter Ingredients...">
-				<input id="submit-button" type="submit" class="btn small" value="Enter">
+				<input id="ingredient-entry" type="text" name="ingredients" placeholder="Add Ingredient...">
+				<input id="submit-button" type="submit" class="btn small" value="Enter" onclick="addIngredient();">
+				<input type="submit" style="float:right; width:43px;" class="btn small" value="Logout" onclick="logOut();">
+			</div>
+			<div class="main-buttons">
 				<a ontouchend="app.scan()" class="btn small">Scan</a>
 				<a ontouchend="app.encode()" class="btn tiny">Encode</a>
 			</div>
 			<div id="table-header"><h2>Your Ingredients</h2></div>
-			<table class="responsive">
+			<table id="ingredientTable" class="responsive">
 				<tr>
-					<th>Header 1</th>
-					<th>Header 2</th>
-					<th>Header 3</th>
+					<th>Ingredient</th>
+					<th>Quantity</th>
+					<th>Expiration Date</th>
 				</tr>
-				<tr>
-					<td>row 1, cell 1</td>
-					<td>row 1, cell 2</td>
-					<td>row 1, cell 3</td>
-				</tr>
-				<tr>
-					<td>row 2, cell 1</td>
-					<td>row 2, cell 2</td>
-					<td>row 2, cell 3</td>
-				</tr>
-				<tr>
-					<td>row 3, cell 1</td>
-					<td>row 3, cell 2</td>
-					<td>row 3, cell 3</td>
-				</tr>	
 			</table>
-			<input id="build-button" type="submit" class="btn" value="Build Recipes">
+			<a href="availRecipes.html"><input id="build-button" type="submit" class="btn" value="Build Recipes"></a>
         </div>
-		<a href="availRecipes.html">This is the new page</a>
     </body>
 	<script type="text/javascript" src="js/cordova-2.1.0.js"></script>
 	<script type="text/javascript" src="barcodescanner.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
 	<script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+	<script type="text/javascript" src="js/utils.js"></script>
 	<script src="js/responsive-tables.js"></script>
+	<script src="https://apis.google.com/js/client.js?onload=init"></script>
 	<script type="text/javascript">
 		app.initialize();
+		checkLogin();
+		createTable();
 	</script>
 </html>

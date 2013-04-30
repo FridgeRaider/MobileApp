@@ -20,6 +20,7 @@
 package com.simonmacdonald.scan;
 
 import android.app.Activity;
+import android.webkit.CookieManager;
 import android.os.Bundle;
 import org.apache.cordova.*;
 
@@ -28,6 +29,7 @@ public class BarcodeScanner extends DroidGap
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
+    	CookieManager.setAcceptFileSchemeCookies(true);
         super.onCreate(savedInstanceState);
         super.loadUrl("file:///android_asset/www/index.html");
     }

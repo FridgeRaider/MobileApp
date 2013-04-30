@@ -23,17 +23,17 @@ $(document).ready(function() {
 	
 	function splitTable(original)
 	{
-		original.wrap("<div class='table-wrapper' />");
+		// original.wrap("<div class='table-wrapper' />");
 		
-		var copy = original.clone();
-		copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
-		copy.removeClass("responsive");
+		// var copy = original.clone();
+		// copy.find("td:not(:first-child), th:not(:first-child)").css("display", "none");
+		// copy.removeClass("responsive");
 		
-		original.closest(".table-wrapper").append(copy);
-		copy.wrap("<div class='pinned' />");
-		original.wrap("<div class='scrollable' />");
+		// original.closest(".table-wrapper").append(copy);
+		// copy.wrap("<div class='pinned' />");
+		// original.wrap("<div class='scrollable' />");
 
-    setCellHeights(original, copy);
+    // setCellHeights(original, copy);
 	}
 	
 	function unsplitTable(original) {
